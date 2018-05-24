@@ -7,6 +7,17 @@ ssh -C -f -N -g -L listen_port:DST_Host:DST_port user@Tunnel_Host
 ssh -C -f -N -g -R listen_port:DST_Host:DST_port user@Tunnel_Host   无论是否添加  -g  选项，远端都是绑定在 127.0.0.1 这个地址上
 ssh -C -f -N -g -D listen_port user@Tunnel_Host
 ```
+#### 只允许通过指定的IP连接这个远程转发的端口
+```
+GatewayPorts clientspecified
+
+This means that the client can specify an IP address from which connections to the port are allowed. The syntax for this is:
+
+ssh -R 52.194.1.73:8080:localhost:80 host147.aws.example.com
+
+In this example, only connections from the IP address 52.194.1.73 to port 8080 are allowed.
+```
+
 
 >-f Fork into background after authentication.
 后台认证用户/密码，通常和-N连用，不用登录到远程主机。  
