@@ -84,3 +84,4 @@ ip rule add from IP地址1 table 100
 
 ip rule add from IP地址2 table 200
 ```
+## ![route table graph](iptables-routing.jpg)
